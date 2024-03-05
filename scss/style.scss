@@ -1,7 +1,6 @@
-@import "utilities";  
-@import "btnConfig";  
+@import "utilities";
+@import "btnConfig";
 @import "config";
-
 
 * {
   box-sizing: border-box;
@@ -13,17 +12,15 @@ body {
   background-color: $light-color;
   font-family: $font-stack;
   line-height: 1;
-  color: $text-color-dark;
 }
 
 img {
   border-radius: 50%;
-  max-width: 90%; 
+  max-width: 90%;
 }
 
 a {
   text-decoration: none;
-  color: $text-color-dark;
 }
 
 .hero {
@@ -52,12 +49,12 @@ a {
         margin-right: 20px;
 
         &:last-child {
-          margin-right: 0; // Remove the right margin for the last item
+          margin-right: 0;
         }
       }
 
       a {
-        @include set-bg($light-color); // Utilize the mixin for consistent styling
+        @include set-bg($light-color);
       }
     }
   }
@@ -65,18 +62,36 @@ a {
   .hero-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Align items to the start of the cross axis */
-  
+    align-items: flex-start;
+
     .text-content {
-      max-width: 600px; /* Adjust the maximum width as needed */
+      max-width: 600px;
     }
-  
+
     .image-content {
       img {
         border-radius: 50%;
-        height: 120%; /* Make the image take the full height of its container */
-        max-height: 4000px; /* Set a maximum height for the circular image */
+        height: 120%;
+        max-height: 4000px;
       }
     }
+  }
+}
+
+$spaceamounts: (1, 2, 3, 4, 5);
+
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+  .py-#{$space} {
+    padding: #{$space}rem 0;
   }
 }
